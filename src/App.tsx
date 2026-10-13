@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 import { Link, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -22,7 +22,7 @@ function App() {
         </nav>
       </div>
       <Routes>
-        <Route exact path="/" element={<Home/>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
       </Routes>
     </div>
