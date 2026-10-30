@@ -9,15 +9,35 @@ type LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+const extractUrlLanguageParameter = () => {
+  const queryString = window.location.search || window.location.hash.split('?')[1];
+  const urlParams = new URLSearchParams(queryString || '');
+  const urlLang = urlParams.get('lang');
+  if (urlLang !== null && urlLang in translations)
+    return urlLang as Language;
+  return null;
+};
+
+const saveLanguageToLocalStorage = (lang : Language) => {
+  localStorage.setItem('portfolio-lang', lang);
+}
+
 export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
   // Default to 'en'
   const [language, setLanguageState] = useState<Language>(() => {
+    // Try to get language from URL
+    let urlLanguage = extractUrlLanguageParameter()
+    if (urlLanguage !== null) {
+      saveLanguageToLocalStorage(urlLanguage)
+    }
+
+    // Fallback to saved or default
     const saved = localStorage.getItem('portfolio-lang');
-    return (saved !== null && ['en','pt','fr','es'].includes(saved)) ? saved as Language : 'en';
+    return (saved !== null && saved in translations) ? saved as Language : 'en';
   });
 
   const setLanguage = (lang:Language) => {
-    localStorage.setItem('portfolio-lang', lang);
+    saveLanguageToLocalStorage(lang);
     setLanguageState(lang);
   }
 
