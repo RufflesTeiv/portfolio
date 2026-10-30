@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { Language, TranslationKey, translations } from "./translations"
 
 type LanguageContextType = {
@@ -42,6 +42,21 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
   }
 
   const t = translations[language];
+
+  useEffect(() => {
+    (window as any).getLanguageLink = () => {
+      const baseUrl = window.location.origin + window.location.pathname;
+      const currentHash = window.location.hash.split('?')[0] || "#/";
+      const fullLink = `${baseUrl}${currentHash}?lang=${language}`;
+      console.log(fullLink);
+      navigator.clipboard.writeText(fullLink).catch(() => {});
+      return fullLink;
+    };
+
+    return () => {
+      delete (window as any).getLanguageLink;
+    }
+  }, [language]);
 
   return(
     <LanguageContext.Provider value={{language, setLanguage, t}}>
