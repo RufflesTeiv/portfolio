@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from 'react-router-dom';
+import { LanguageProvider } from './locales/LanguageContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 root.render(
   <React.StrictMode>
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <LanguageProvider>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </LanguageProvider>
   </React.StrictMode>
   // document.getElementById('root')
 );
