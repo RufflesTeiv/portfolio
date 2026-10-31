@@ -1,7 +1,5 @@
 const en = {
-    section: {
-        key: "Key"
-    }
+    whatsAppMessage: "Hello!"
 }
 
 export type TranslationKey = typeof translations.en;
@@ -9,19 +7,13 @@ export type TranslationKey = typeof translations.en;
 export const translations = {
     en,
     pt: {
-        section: {
-            key: "Chave"
-        }
+        whatsAppMessage: "Ol%C3%A1!"
     },
     fr: {
-        section: {
-            key: "Clé"
-        }
+        whatsAppMessage: "Bonjour!"
     },
     es: {
-        section: {
-            key: "Llave"
-        }
+        whatsAppMessage: "Hola!"
     }
 } as const;
 

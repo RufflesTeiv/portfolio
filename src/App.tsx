@@ -6,7 +6,7 @@ import LanguageSwitcher from "./components/LanguageSwitcher";
 
 function App() {
   return (
-    <div className='App'>
+    <div className='App h-screen'>
       <div>
         <nav className="flex mx-auto w-full justify-center gap-8">
           <ul id="navigation">
