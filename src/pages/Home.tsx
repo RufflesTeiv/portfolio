@@ -16,7 +16,14 @@ class Home extends React.Component {
 				style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/background-tile.png)` }}
 			>
 				{/* Título */}
-				<p className="text-5xl">rafa.teivfik</p>
+				<div className="flex gap-6 max-h-[100px]">
+					<img
+						src={`${process.env.PUBLIC_URL}/eu.png`}
+					/>
+					<img
+						src={`${process.env.PUBLIC_URL}/nome.png`}
+					/>
+				</div>
 				<ContactInfo/>
 				<div className="flex flex-col gap-4">
 					<p>Hey there! My name is Rafa Teivfik, and I'm from Curitiba, Brazil.</p>
