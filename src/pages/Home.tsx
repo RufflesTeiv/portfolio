@@ -25,10 +25,10 @@ class Home extends React.Component {
 					/>
 				</div>
 				<ContactInfo/>
-				<div className="flex flex-col gap-4">
-					<p>Hey there! My name is Rafa Teivfik, and I'm from Curitiba, Brazil.</p>
+				<div className="flex flex-col gap-4 text-text-beige max-w-[800px] font-inter font-medium">
+					<p className="">Hey there! My name is Rafa Teivfik, and I'm from Curitiba, Brazil.</p>
 					<p>I'm a <b><i>game developer</i></b>, <b><i>programmer</i></b> and <b><i>game designer</i></b>, always ready to take on new challenges!</p>
-					<p>I believe games are more than products to be consumed - they are experiences to be felt. I'm driven to make games by a deep artistic need to build worlds that resonate with others.</p>
+					<p>I believe <span className="text-pink-highlight">games are more than products to be consumed</span> - they are experiences to be felt. I'm driven to make games by a deep artistic need to build worlds that resonate with others.</p>
 				</div>
 				<div className="mx-10 w-full h-1 bg-white"/>
 				<FilterProvider>

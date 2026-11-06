@@ -33,6 +33,9 @@ module.exports = {
         "button-gray":    "#2B2B2B",
         "pink-highlight": "#DD006B"
       },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"]
+      },
       keyframes: {
         float: {
           "0%, 100%": { transform: "translateY(0)" },
