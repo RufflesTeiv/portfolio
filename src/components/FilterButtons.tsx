@@ -35,10 +35,10 @@ export function FilterButton({Icon, text, tag} : FilterButtonProps) {
 
   return(
     <button
-      className={`bg-gray-400 p-3 rounded-full flex items-center justify-center gap-2 ${isActive ? "border-white border-2" : ""}`}
+      className={`bg-button-gray p-3 rounded-full flex items-center justify-center gap-2 ${isActive ? "border-white border-2" : ""}`}
       onClick={() => toggleTag(tag)}
     >
-      <Icon className="text-white w-5 h-5"/>
+      <Icon className="text-text-beige w-5 h-5"/>
       <p className={`text-white ${isActive ? "" : "hidden"}`}>
         {text}
       </p>

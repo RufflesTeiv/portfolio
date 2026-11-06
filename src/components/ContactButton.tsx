@@ -3,38 +3,33 @@ import { LucideIcon } from "lucide-react";
 
 export interface ContactButtonProps {
   url: string,
-  Icon?: LucideIcon,
-  svgUrl?: string
+  IconLucide?: LucideIcon,
+  IconComponent?: React.FC<React.SVGProps<SVGSVGElement>>
 }
 
-const Symbol = ({url,Icon,svgUrl} : ContactButtonProps) => {
- if (Icon !== undefined) {
-  let SolidIcon = Icon as LucideIcon
-  return (<SolidIcon className="text-white w-6 h-6"/>)
- }
- else if (svgUrl !== undefined) {
-  return(
-    <img
-      src={svgUrl}
-      alt={`A button with a logo, that sends the user to the link ${url}`}
-      className="w-6 h-6 fill-white"
-    />
-  )
+const Symbol = ({url,IconLucide,IconComponent} : ContactButtonProps) => {
+ if (IconLucide !== undefined || IconComponent !== undefined) {
+  let SolidIcon = IconLucide !== undefined ? IconLucide as LucideIcon : IconComponent as React.FC<React.SVGProps<SVGSVGElement>>
+  return (<SolidIcon className="text-text-beige w-6 h-6"/>)
  }
  else return (
   <p>Error</p>
  )
 }
 
-export default function ContactButton({url,Icon, svgUrl} : ContactButtonProps) {
+export default function ContactButton({url,IconLucide,IconComponent} : ContactButtonProps) {
   return (
     <Link
-      className="bg-gray-600 w-9 h-9 rounded-full flex items-center justify-center"
+      className="
+        bg-button-gray w-11 h-11 rounded-full flex items-center justify-center
+        transition-all duration-300 ease-in-out
+        hover:bg-pink-highlight hover:scale-110
+      "
       target="_blank"
       rel="noopener noreferrer"
       to={url}
     >
-      {Symbol({url,Icon,svgUrl})}
+      {Symbol({url,IconLucide,IconComponent})}
     </Link>
   )
 }

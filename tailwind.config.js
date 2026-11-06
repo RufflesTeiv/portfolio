@@ -28,6 +28,11 @@ module.exports = {
         cardform:  "cardform 0.7s cubic-bezier(.2,.7,.2,1) both",
         cardsheen: "cardsheen 1.6s ease-in-out infinite",
       },
+      colors: {
+        "text-beige":     "#E6AD9A",
+        "button-gray":    "#2B2B2B",
+        "pink-highlight": "#DD006B"
+      },
       keyframes: {
         float: {
           "0%, 100%": { transform: "translateY(0)" },
