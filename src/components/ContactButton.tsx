@@ -23,7 +23,7 @@ export default function ContactButton({url,IconLucide,IconComponent} : ContactBu
       className="
         bg-button-gray w-11 h-11 rounded-full flex items-center justify-center
         transition-all duration-300 ease-in-out
-        hover:bg-pink-highlight hover:scale-110
+        hover:bg-pink-highlight hover:scale-110 hover:-rotate-12
       "
       target="_blank"
       rel="noopener noreferrer"
