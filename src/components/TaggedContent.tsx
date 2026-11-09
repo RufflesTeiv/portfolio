@@ -11,6 +11,18 @@ export default function TaggedContent({className = "", tags,children} : TaggedCo
   const {activeTags} = useFilter();
 
   const showContent = activeTags.length === 0 || tags.some((t) => activeTags.includes(t));
-
-  return showContent ? (<div className={className}>{children}</div>) : (<></>)
+  
+  return (
+    <div
+      className={`
+        grid
+        transition-all duration-500 ease-in-out
+        ${showContent ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}  
+      `}
+    >
+      <div className={`overflow-hidden ${className}`}>
+        {children}
+      </div>
+    </div>
+  )
 }

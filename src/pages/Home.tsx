@@ -41,7 +41,6 @@ class Home extends React.Component {
 					{/* Showcase geral */}
 					<FilterButtons/>
 					{/* Experiência */}
-					Contexto de filtro
 				</FilterProvider>
 				<ContactInfo/>
 			</div>
