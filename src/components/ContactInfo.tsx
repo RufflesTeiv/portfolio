@@ -12,10 +12,10 @@ function ContactInfo() {
   return (
     <div className="flex gap-3">
       <ContactButton url="mailto:teivfik@gmail.com" IconLucide={Mail} />
-      <ContactButton url={`https://wa.me/5541999199614?text=${t.whatsAppMessage}`} IconComponent={GithubIcon}/>
+      <ContactButton url={`https://wa.me/5541999199614?text=${t.whatsAppMessage}`} IconComponent={WhatsAppIcon}/>
       <ContactButton url="https://www.linkedin.com/in/rafa-teivfik/" IconComponent={ItchIcon}/>
       <ContactButton url="https://cadentiaruffles.itch.io/" IconComponent={LinkedInIcon}/>
-      <ContactButton url="https://github.com/RufflesTeiv" IconComponent={WhatsAppIcon}/>
+      <ContactButton url="https://github.com/RufflesTeiv" IconComponent={GithubIcon}/>
       <ContactButton url="https://rufflesteiv.notion.site/Ruffles-Gamedev-Wiki-00bb7859aaf6430fb854f426e0a64a47?pvs=4" IconLucide={BookOpenText}/>
     </div>
   )
